@@ -2,27 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
 :root {
-  --gold: #f4c430;
-  --dark: #0a0c10;
-  --accent: #ff6b35;
-  --red:  #e63946;
+  --orange:      #EF4A23;
+  --orange-dark: #C7391A;
+  --blue:        #2E3492;
+  --navy:        #1A1D3B;
+  --slate:       #484848;
+  --cool:        #6B7280;
+  --border:      #E5E7EB;
+  --light-gray:  #F3F4F6;
+  --green:       #2D8C4E;
+  --amber:       #D97706;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply font-body; }
+  body { @apply font-body text-lasn-navy antialiased bg-gray-100; }
+  h1, h2, h3, h4 { @apply font-display text-lasn-navy; }
 }
 
 @layer components {
+  /* Primary CTA — LASN Orange */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm;
+    @apply inline-flex items-center gap-2 bg-lasn-orange hover:bg-lasn-orange-dark text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm;
   }
-  .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm;
+  /* Secondary CTA — LASN Blue outline */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-lasn-blue text-lasn-blue hover:bg-lasn-blue hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm;
   }
-  .pill-open     { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-800; }
-  .pill-full     { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800; }
-  .pill-waitlist { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800; }
-  .pill-sport    { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-700; }
+  /* Ghost on dark background */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-lasn-navy font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm;
+  }
+
+  /* Overline — signature LASN pattern */
+  .overline {
+    @apply text-lasn-blue text-xs font-semibold uppercase tracking-widest;
+  }
+
+  /* Status pills */
+  .pill-open     { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-lasn-green; }
+  .pill-full     { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-lasn-amber; }
+  .pill-waitlist { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-lasn-blue; }
+  .pill-sport    { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-lasn-orange; }
+
+  /* Mono data */
+  .data-mono {
+    @apply font-mono text-xs tracking-wider text-lasn-cool uppercase;
+  }
 }
