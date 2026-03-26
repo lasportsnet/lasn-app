@@ -1,9 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'https://placeholder.supabase.co'
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? 'placeholder'
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(url, key)
 
 export type League = {
   id: string
@@ -16,7 +16,7 @@ export type League = {
   start_time: string
   fee: number
   price_per_player: number
-  status: 'open' | 'full' | 'waitlist' | 'closed'
+  status: string
   max_teams: number
   team_count: number
   league_code: string
