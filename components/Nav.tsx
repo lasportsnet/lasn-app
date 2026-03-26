@@ -28,14 +28,29 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="bg-lasn-blue sticky top-0 z-50 shadow-md">
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none flex-shrink-0">
-            <span className="text-white font-display font-bold text-lg tracking-tight">LASPORTSNET</span>
-            <span className="text-blue-300 text-[9px] tracking-widest uppercase">A Smarter Way to Play</span>
+          <Link href="/" className="flex-shrink-0 flex items-center gap-2">
+            {/* Uses the logo from lasn.dev — swap for your own file once in repo */}
+            <img
+              src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=384&q=75"
+              alt="LA Sports Net"
+              className="h-10 w-auto"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+                if (e.currentTarget.nextSibling) {
+                  (e.currentTarget.nextSibling as HTMLElement).style.display = 'flex'
+                }
+              }}
+            />
+            {/* Fallback text logo */}
+            <div className="hidden flex-col leading-none">
+              <span className="text-[#2E3492] font-black text-lg tracking-tight">LASPORTSNET</span>
+              <span className="text-gray-400 text-[9px] tracking-widest uppercase">A Smarter Way to Play</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
@@ -43,15 +58,15 @@ export default function Nav() {
             <div className="relative"
               onMouseEnter={() => setSportsOpen(true)}
               onMouseLeave={() => setSportsOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-100 hover:text-white transition-colors rounded-lg hover:bg-white/10">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#EF4A23] transition-colors uppercase tracking-wide">
                 Sports
-                <svg className={`w-4 h-4 transition-transform ${sportsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                <svg className={`w-3.5 h-3.5 transition-transform ${sportsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {sportsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-lasn-border rounded-xl shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
                   {SPORTS.map(s => (
                     <Link key={s.slug} href={`/sports/${s.slug}`}
-                      className="block px-4 py-2 text-sm text-lasn-navy hover:bg-orange-50 hover:text-lasn-orange transition-colors font-medium">
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] transition-colors">
                       {s.name}
                     </Link>
                   ))}
@@ -62,15 +77,15 @@ export default function Nav() {
             <div className="relative"
               onMouseEnter={() => setLocOpen(true)}
               onMouseLeave={() => setLocOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-blue-100 hover:text-white transition-colors rounded-lg hover:bg-white/10">
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#EF4A23] transition-colors uppercase tracking-wide">
                 Locations
-                <svg className={`w-4 h-4 transition-transform ${locOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                <svg className={`w-3.5 h-3.5 transition-transform ${locOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {locOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-lasn-border rounded-xl shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-100 rounded-xl shadow-lg py-2 z-50">
                   {LOCATIONS.map(loc => (
                     <Link key={loc} href={`/locations/${loc.toLowerCase().replace(/ /g,'-')}`}
-                      className="block px-4 py-2 text-sm text-lasn-navy hover:bg-orange-50 hover:text-lasn-orange transition-colors font-medium">
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] transition-colors">
                       {loc}
                     </Link>
                   ))}
@@ -78,20 +93,23 @@ export default function Nav() {
               )}
             </div>
 
-            <Link href="/about"   className="px-4 py-2 text-sm font-medium text-blue-100 hover:text-white transition-colors rounded-lg hover:bg-white/10">About</Link>
-            <Link href="/faq"     className="px-4 py-2 text-sm font-medium text-blue-100 hover:text-white transition-colors rounded-lg hover:bg-white/10">FAQs</Link>
-            <Link href="/contact" className="px-4 py-2 text-sm font-medium text-blue-100 hover:text-white transition-colors rounded-lg hover:bg-white/10">Contact</Link>
+            <Link href="/about"   className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#EF4A23] transition-colors uppercase tracking-wide">About</Link>
+            <Link href="/faq"     className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#EF4A23] transition-colors uppercase tracking-wide">FAQs</Link>
+            <Link href="/contact" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#EF4A23] transition-colors uppercase tracking-wide">Contact</Link>
           </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link href="/login" className="text-sm font-medium text-blue-200 hover:text-white transition-colors">Login</Link>
-            <Link href="/leagues" className="btn-primary">Register Now</Link>
+          <div className="hidden lg:block">
+            <Link href="/leagues"
+              className="bg-[#EF4A23] hover:bg-[#C7391A] text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-colors">
+              Register Now
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
-          <button className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
-            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}>
+            <svg className="w-6 h-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileOpen
                 ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
@@ -102,20 +120,23 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-blue-700 bg-lasn-blue px-4 py-4 space-y-1">
-          <p className="text-xs font-semibold text-blue-300 uppercase tracking-wider px-3 py-1">Sports</p>
+        <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider px-3 py-1">Sports</p>
           {SPORTS.map(s => (
             <Link key={s.slug} href={`/sports/${s.slug}`} onClick={() => setMobileOpen(false)}
-              className="block px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
+              className="block px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] rounded-lg transition-colors">
               {s.name}
             </Link>
           ))}
-          <div className="border-t border-blue-700 my-2" />
-          <Link href="/about"   onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white rounded-lg">About</Link>
-          <Link href="/faq"     onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white rounded-lg">FAQs</Link>
-          <Link href="/contact" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-blue-100 hover:bg-white/10 hover:text-white rounded-lg">Contact</Link>
-          <div className="border-t border-blue-700 my-2" />
-          <Link href="/leagues" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center">Register Now</Link>
+          <div className="border-t border-gray-100 my-2" />
+          <Link href="/about"   onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] rounded-lg">About</Link>
+          <Link href="/faq"     onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] rounded-lg">FAQs</Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#EF4A23] rounded-lg">Contact</Link>
+          <div className="border-t border-gray-100 my-2" />
+          <Link href="/leagues" onClick={() => setMobileOpen(false)}
+            className="block w-full text-center bg-[#EF4A23] hover:bg-[#C7391A] text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">
+            Register Now
+          </Link>
         </div>
       )}
     </header>
