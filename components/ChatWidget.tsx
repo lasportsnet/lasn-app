@@ -72,7 +72,7 @@ export default function ChatWidget() {
               <img
                 src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                 alt="LASN"
-                className="w-7 h-7 object-contain brightness-0 invert"
+                className="w-7 h-7 object-contain"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
                 }}
@@ -92,11 +92,11 @@ export default function ChatWidget() {
           <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 min-h-[200px] max-h-[360px]">
             {/* Welcome message */}
             <div className="flex gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-[#1A1D3B] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-7 h-7 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <img
                   src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                   alt="LASN"
-                  className="w-4 h-4 object-contain brightness-0 invert"
+                  className="w-4 h-4 object-contain"
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
               </div>
@@ -126,11 +126,11 @@ export default function ChatWidget() {
             {messages.map((msg, i) => (
               <div key={i} className={`flex gap-2.5 ${msg.role === 'user' ? 'justify-end' : ''}`}>
                 {msg.role === 'assistant' && (
-                  <div className="w-7 h-7 rounded-full bg-[#1A1D3B] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <img
                       src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                       alt="LASN"
-                      className="w-4 h-4 object-contain brightness-0 invert"
+                      className="w-4 h-4 object-contain"
                       onError={(e) => { e.currentTarget.style.display = 'none' }}
                     />
                   </div>
@@ -150,11 +150,11 @@ export default function ChatWidget() {
             {/* Loading indicator */}
             {loading && (
               <div className="flex gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-[#1A1D3B] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <img
                     src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                     alt="LASN"
-                    className="w-4 h-4 object-contain brightness-0 invert"
+                    className="w-4 h-4 object-contain"
                     onError={(e) => { e.currentTarget.style.display = 'none' }}
                   />
                 </div>
@@ -207,11 +207,11 @@ export default function ChatWidget() {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-white hover:bg-gray-50 shadow-lg border border-gray-200 rounded-full pl-3 pr-5 py-3 transition-all hover:shadow-xl group"
       >
-        <div className="w-8 h-8 rounded-full bg-[#1A1D3B] flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
           <img
             src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
             alt="LASN"
-            className="w-5 h-5 object-contain brightness-0 invert"
+            className="w-5 h-5 object-contain"
             onError={(e) => { e.currentTarget.style.display = 'none' }}
           />
         </div>
