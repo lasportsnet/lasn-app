@@ -112,19 +112,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&q=80"
-              alt="Coed softball team at bat during a sunset game"
-              className="rounded-2xl w-full h-64 object-cover"
+              src="https://lasn.dev/softball-girl-at-bat.png"
+              alt="Coed softball player at bat during a game"
+              className="rounded-2xl w-full h-80 sm:h-96 object-cover"
             />
             <img
-              src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&q=80"
-              alt="Players diving for a volleyball on a beach court"
-              className="rounded-2xl w-full h-64 object-cover"
+              src="https://lasn.dev/volleyball-1.png"
+              alt="Players jumping at the net during beach volleyball"
+              className="rounded-2xl w-full h-80 sm:h-96 object-cover"
             />
             <img
-              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80"
-              alt="Flag football quarterback throwing a pass on a grass field"
-              className="rounded-2xl w-full h-64 object-cover"
+              src="https://lasn.dev/flag-football-qb.png"
+              alt="Flag football quarterback throwing a pass"
+              className="rounded-2xl w-full h-80 sm:h-96 object-cover"
             />
           </div>
         </div>
@@ -190,8 +190,8 @@ export default function HomePage() {
           <div className="mt-10 flex items-center gap-8">
             <div className="hidden lg:block">
               <img
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300&q=80"
-                alt="Group of friends in sports jerseys cheering at a bar after a game"
+                src="https://lasn.dev/group-1231.png"
+                alt="LASN players celebrating together after a game"
                 className="rounded-2xl w-64 h-40 object-cover"
               />
             </div>
@@ -244,10 +244,10 @@ export default function HomePage() {
             </div>
 
             <div className="hidden lg:grid grid-cols-2 gap-3">
-              <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&q=80" alt="Teams group photo on a soccer field at golden hour" className="rounded-2xl w-full h-48 object-cover" />
-              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Players mingling at a post-game social event" className="rounded-2xl w-full h-48 object-cover mt-6" />
-              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="A cornhole tournament with players tossing bags" className="rounded-2xl w-full h-48 object-cover -mt-6" />
-              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" alt="Players celebrating after a game" className="rounded-2xl w-full h-48 object-cover" />
+              <img src="https://lasn.dev/community-1.png" alt="Teams group photo on a soccer field at golden hour" className="rounded-2xl w-full h-48 object-cover" />
+              <img src="https://lasn.dev/community-2.png" alt="Players mingling at a post-game social event" className="rounded-2xl w-full h-48 object-cover mt-6" />
+              <img src="https://lasn.dev/community-3.png" alt="A cornhole tournament with players tossing bags" className="rounded-2xl w-full h-48 object-cover -mt-6" />
+              <img src="https://lasn.dev/cta-fistbump.png" alt="Players celebrating after a game" className="rounded-2xl w-full h-48 object-cover" />
             </div>
           </div>
         </div>
