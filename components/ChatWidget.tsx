@@ -72,7 +72,7 @@ export default function ChatWidget() {
               <img
                 src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                 alt="LASN"
-                className="w-7 h-7 object-contain"
+                className="w-7 h-7 object-contain brightness-0 invert"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
                 }}
@@ -96,7 +96,7 @@ export default function ChatWidget() {
                 <img
                   src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                   alt="LASN"
-                  className="w-4 h-4 object-contain"
+                  className="w-4 h-4 object-contain brightness-0 invert"
                   onError={(e) => { e.currentTarget.style.display = 'none' }}
                 />
               </div>
@@ -130,7 +130,7 @@ export default function ChatWidget() {
                     <img
                       src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                       alt="LASN"
-                      className="w-4 h-4 object-contain"
+                      className="w-4 h-4 object-contain brightness-0 invert"
                       onError={(e) => { e.currentTarget.style.display = 'none' }}
                     />
                   </div>
@@ -154,7 +154,7 @@ export default function ChatWidget() {
                   <img
                     src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
                     alt="LASN"
-                    className="w-4 h-4 object-contain"
+                    className="w-4 h-4 object-contain brightness-0 invert"
                     onError={(e) => { e.currentTarget.style.display = 'none' }}
                   />
                 </div>
@@ -211,7 +211,7 @@ export default function ChatWidget() {
           <img
             src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
             alt="LASN"
-            className="w-5 h-5 object-contain"
+            className="w-5 h-5 object-contain brightness-0 invert"
             onError={(e) => { e.currentTarget.style.display = 'none' }}
           />
         </div>
