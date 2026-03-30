@@ -134,16 +134,17 @@ export default function HomePage() {
       <section className="py-20 bg-[#F3F4F6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#EF4A23] text-xs font-bold uppercase tracking-widest mb-2">Choose Your Sport</p>
+            <p className="text-[#1A1D3B] text-xs font-bold uppercase tracking-widest mb-2">Choose Your Sport</p>
             <h2 className="font-display text-4xl font-bold text-[#1A1D3B]">10+ Sports Across LA.</h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SPORTS.map(s => (
               <Link key={s.slug} href={`/sports/${s.slug}`}
-                className="group bg-white hover:bg-[#2E3492] rounded-2xl p-5 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border border-gray-100 hover:border-[#2E3492]">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-[#EF4A23] group-hover:bg-white/20 group-hover:text-white mb-3 transition-colors">{s.name}</span>
-                <h3 className="font-display font-semibold text-[#1A1D3B] group-hover:text-white text-base mb-1.5 transition-colors">{s.name}</h3>
-                <p className="text-xs text-gray-500 group-hover:text-blue-200 leading-relaxed transition-colors line-clamp-2">{s.desc}</p>
+                className="group bg-white rounded-xl p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border border-gray-200 relative overflow-hidden">
+                <div className={`absolute top-0 left-4 right-4 h-1 rounded-b-full ${s.slug === 'kickball' ? 'bg-[#EF4A23]' : 'bg-[#1A1D3B]'}`} />
+                <p className="text-xs font-bold uppercase tracking-widest text-[#1A1D3B] mb-1 mt-2">{s.name}</p>
+                <h3 className={`font-display font-bold text-xl mb-2 ${s.slug === 'kickball' ? 'text-[#EF4A23]' : 'text-[#1A1D3B]'}`}>{s.name}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{s.desc}</p>
               </Link>
             ))}
           </div>
