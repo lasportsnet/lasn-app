@@ -78,7 +78,7 @@ export default function HomePage() {
           <div className="w-12 h-0.5 bg-[#EF4A23] mx-auto mb-8" />
 
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Find your<br />
+            <span className="text-white">Find your</span><br />
             <span
               className="inline-block transition-all duration-400"
               style={{
