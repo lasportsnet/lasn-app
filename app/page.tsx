@@ -67,7 +67,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{backgroundImage:`url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&q=80')`}}
+          style={{backgroundImage:`url('https://lasn.dev/hero-bg.jpg')`}}
         />
         <div className="absolute inset-0 bg-black/65" />
 
@@ -257,7 +257,7 @@ export default function HomePage() {
       <section className="relative py-24 text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{backgroundImage:`url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1920&q=80')`}}
+          style={{backgroundImage:`url('https://lasn.dev/hero-bg.jpg')`}}
         />
         <div className="absolute inset-0 bg-[#1A1D3B]/85" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
