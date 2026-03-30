@@ -141,7 +141,7 @@ export default function HomePage() {
             {SPORTS.map(s => (
               <Link key={s.slug} href={`/sports/${s.slug}`}
                 className="group bg-white rounded-xl p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border border-gray-200 relative overflow-hidden">
-                <div className="absolute top-0 left-4 right-4 h-1 rounded-b-full bg-[#1A1D3B]" />
+                <div className="absolute top-0 left-4 right-4 h-1 rounded-b-full bg-[#2E3492]" />
                 <p className="text-xs font-bold uppercase tracking-widest text-[#1A1D3B] mb-1 mt-2">{s.name}</p>
                 <h3 className="font-display font-bold text-xl mb-2 text-[#1A1D3B]">{s.name}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{s.desc}</p>
