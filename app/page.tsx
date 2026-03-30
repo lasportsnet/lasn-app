@@ -1,7 +1,11 @@
+'use client'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ChatWidget from '@/components/ChatWidget'
+
+const ROTATING_WORDS = ['Team.', 'League.', 'People.', 'Community.', 'Game.']
 
 const SPORTS = [
   { name: 'Soccer',        slug: 'soccer',        desc: 'The beautiful game, LA style. Coed teams, all skill levels, and post-game hangs at the bar.' },
@@ -41,6 +45,20 @@ const TESTIMONIALS = [
 ]
 
 export default function HomePage() {
+  const [wordIndex, setWordIndex] = useState(0)
+  const [fade, setFade] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false)
+      setTimeout(() => {
+        setWordIndex(prev => (prev + 1) % ROTATING_WORDS.length)
+        setFade(true)
+      }, 400)
+    }, 2800)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <Nav />
@@ -61,7 +79,17 @@ export default function HomePage() {
 
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Find your<br />
-            <span style={{color:'#EF4A23'}}>Team.</span>
+            <span
+              className="inline-block transition-all duration-400"
+              style={{
+                color: '#EF4A23',
+                opacity: fade ? 1 : 0,
+                transform: fade ? 'translateY(0)' : 'translateY(12px)',
+                transition: 'opacity 0.4s ease, transform 0.4s ease',
+              }}
+            >
+              {ROTATING_WORDS[wordIndex]}
+            </span>
           </h1>
           <p className="text-gray-200 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Join thousands of players across 10+ sports, 70+ leagues, and neighborhoods all over LA. Find your league, meet your team, get on the field.
