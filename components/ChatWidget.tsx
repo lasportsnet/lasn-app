@@ -205,18 +205,18 @@ export default function ChatWidget() {
       {/* Floating toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-white hover:bg-gray-50 shadow-lg border border-gray-200 rounded-full pl-3 pr-5 py-3 transition-all hover:shadow-xl group"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#EF4A23] hover:bg-[#C7391A] shadow-lg rounded-full pl-3 pr-6 py-3 transition-all hover:shadow-xl group"
       >
-        <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
+        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0">
           <img
-            src="https://lasn.dev/_next/image?url=%2Flasn-logo.png&w=96&q=75"
+            src="https://lasn.dev/lasn-logo.png"
             alt="LASN"
-            className="w-5 h-5 object-contain"
-            onError={(e) => { e.currentTarget.style.display = 'none' }}
+            className="w-7 h-7 object-contain"
+            style={{ filter: 'none' }}
           />
         </div>
-        <span className="text-sm font-semibold text-[#1A1D3B] group-hover:text-[#EF4A23] transition-colors">
-          {isOpen ? 'Close' : 'Chat with us'}
+        <span className="text-sm font-bold text-white tracking-wide">
+          {isOpen ? 'Close' : 'Chat With Us'}
         </span>
       </button>
     </>
